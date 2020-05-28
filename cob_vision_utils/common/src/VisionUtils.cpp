@@ -83,10 +83,10 @@ void ipa_Utils::InitUndistortMap( const cv::Mat& _A, const cv::Mat& _dist_coeffs
 {
     uchar* buffer = 0;
 
-	CvMat A = _A;
-	CvMat dist_coeffs = _dist_coeffs;
-	CvMat mapxarr = _mapxarr;
-	CvMat mapyarr = _mapyarr;
+  CvMat A = _A;
+  CvMat dist_coeffs = _dist_coeffs;
+  CvMat mapxarr = _mapxarr;
+  CvMat mapyarr = _mapyarr;
 
     float a[9], k[4];
     int coi1 = 0, coi2 = 0;

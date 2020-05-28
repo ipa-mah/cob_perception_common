@@ -21,7 +21,7 @@
 
 	#include "cob_vision_utils/VisionUtils.h"
 	#include "tinyxml.h"
-	#include <opencv2/imgproc/imgproc.hpp>
+  #include <opencv2/imgproc/imgproc.hpp>
 #else
 	#include "cob_perception_common/cob_vision_utils/common/include/cob_vision_utils/CameraSensorToolbox.h"
 
@@ -146,7 +146,7 @@ CameraSensorToolbox& CameraSensorToolbox::operator=(const CameraSensorToolbox& c
 }
 
 unsigned long CameraSensorToolbox::Init(std::string directory, ipa_CameraSensors::t_cameraType cameraType,
-										int cameraIndex, const CvSize imageSize)
+                    int cameraIndex, const cv::Size imageSize)
 {
 	Release();
 
@@ -168,7 +168,7 @@ unsigned long CameraSensorToolbox::Init(const std::map<std::string, cv::Mat>* in
 										const std::map<std::string, cv::Mat>* extrinsicMatrices,
 										const std::map<std::string, cv::Mat>* undistortMapsX,
 										const std::map<std::string, cv::Mat>* undistortMapsY,
-										const CvSize imageSize)
+                    const cv::Size imageSize)
 {
 	Release();
 

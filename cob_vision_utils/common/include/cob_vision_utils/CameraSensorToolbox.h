@@ -62,7 +62,7 @@ class __DLL_LIBCAMERASENSORS__ CameraSensorToolbox
 		/// @param cameraIndex The camera index
 		/// @param imageSize The Size of the image returned by the camera
 		/// @return Return code
-		virtual unsigned long Init(std::string directory, ipa_CameraSensors::t_cameraType cameraType, int cameraIndex, const CvSize imageSize);
+    virtual unsigned long Init(std::string directory, ipa_CameraSensors::t_cameraType cameraType, int cameraIndex, const cv::Size imageSize);
 
 		/// Initialize the camera sensor toolbox.
 		/// @param intrinsicMatrices Intrinsic parameters [fx 0 cx; 0 fy cy; 0 0 1]
@@ -78,7 +78,7 @@ class __DLL_LIBCAMERASENSORS__ CameraSensorToolbox
 									const std::map<std::string, cv::Mat>* extrinsicMatrices,
 									const std::map<std::string, cv::Mat>* undistortMapsX,
 									const std::map<std::string, cv::Mat>* undistortMapY,
-									const CvSize imageSize);
+                  const cv::Size imageSize);
 
 		/// Returns a matrix of the camera's extrinsic parameters.
 		/// The extrinsic matrix is a 4x3 matrix of the format (R|t), where R desribes a 3x3 rotation matrix and
@@ -212,7 +212,7 @@ class __DLL_LIBCAMERASENSORS__ CameraSensorToolbox
 		std::map<std::string, cv::Mat> m_undistortMapsX;	///< The output array of x coordinates for the undistortion map
 		std::map<std::string, cv::Mat> m_undistortMapsY;	///< The output array of Y coordinates for the undistortion map
 
-		CvSize m_ImageSize; ///< The size of the image that is returned
+    cv::Size m_ImageSize; ///< The size of the image that is returned
 };
 
 /// Creates, intializes and returns a smart pointer object for the toolbox.
